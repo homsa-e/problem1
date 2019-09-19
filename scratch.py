@@ -24,6 +24,8 @@ if args.mtime:
         t = time.ctime(st.st_mtime)
     print(t)
 if args.size:
-    print("file size: %s" % st.st_size)
+    x = int(st.st_size) / 1024
+    x /= 1024
+    print("file size: %f" % x, "MB")
 if args.rename:
     os.rename(file, args.rename)
